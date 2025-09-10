@@ -33,13 +33,6 @@ with st.sidebar:
         mime="text/plain",
         use_container_width=True
     )
-    
-    st.markdown("---")
-    st.markdown("Optional Enhancements (Bonus Marks):")
-    st.markdown("- **Time/Date Stamp:** Add timestamps to chat messages.")
-    st.markdown("- **Light/Dark Theme:** Add a theme switcher.")
-    st.markdown("- **Typing Indicator:** Use `st.spinner` for an animated indicator.") #[cite: 42]
-
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
@@ -57,4 +50,5 @@ if user_query := st.chat_input("What is on your mind?"):
                 st.markdown(response)
                 st.session_state.messages.append({"role": "assistant", "content": response})
             except Exception as e:
+
                 st.error(f"An error occurred: {e}")
