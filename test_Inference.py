@@ -1,11 +1,12 @@
 import os
+import streamlit as st
 from huggingface_hub import InferenceClient
 from dotenv import load_dotenv
 
 load_dotenv()
 # --- FINAL FIX ---
 # 1. PASTE YOUR NEW, VALID TOKEN HERE. This is the one we just tested.
-HF_TOKEN = os.getenv("hugging_face")
+HF_TOKEN = st.secrets["hugging_face"]
 
 # 2. Make sure the token is available for the client
 if not HF_TOKEN:
@@ -51,4 +52,5 @@ if __name__ == '__main__':
         print("Please paste your real Hugging Face token into the HF_TOKEN variable.")
     else:
         test_response = generate_response(test_model, test_messages)
+
         print(f"AI: {test_response}")
