@@ -8,7 +8,6 @@ st.title("LLM Playground")
 st.subheader("Conversational AI Web Application")
 st.write("A simple chat application powered by Hugging Face Transformers and Streamlit.")
 models = [
-    "meta-llama/Llama-3-8b-chat-hf",
     "mistralai/Mistral-7B-Instruct-v0.2"
 ]
 selected_model = st.selectbox("Select a model:", models)
