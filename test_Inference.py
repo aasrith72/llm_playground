@@ -3,7 +3,7 @@ from huggingface_hub import InferenceClient
 from dotenv import load_dotenv
 
 load_dotenv()
-HF_TOKEN = os.getenv("hugging_face")
+HF_TOKEN = os.getenv("HUGGINGFACE_TOKEN")
 
 if not HF_TOKEN:
     raise ValueError("HUGGINGFACE_TOKEN is not set. Please paste your token.")
